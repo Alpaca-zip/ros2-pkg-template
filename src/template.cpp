@@ -30,7 +30,7 @@ int main(int argc, char* argv[])
 {
   rclcpp::init(argc, argv);
   auto node = std::make_shared<TemplateNode>();
-  RCLCPP_INFO(node->get_logger(), "Hello, world!! 🚀");
+  RCLCPP_INFO(node->get_logger(), "From C++: Hello, world!! 🚀");
   rclcpp::shutdown();
   return 0;
 }

@@ -24,5 +24,5 @@ private:
   // private members
 public:
   TemplateNode();
-  ~TemplateNode();
+  ~TemplateNode() override;
 };
