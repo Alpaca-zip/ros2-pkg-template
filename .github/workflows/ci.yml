@@ -31,6 +31,7 @@ jobs:
           ROS_DISTRO: humble # Replace humble for your chosen distro.
           # UPSTREAM_WORKSPACE: dependencies.rosinstall
           # BEFORE_BUILD_TARGET_WORKSPACE: 'apt update -q && python3 -m pip install ****'
+          CLANG_TIDY_ARGS: '--extra-arg=-std=c++17'
           CLANG_TIDY: pedantic
 
   black_check:
