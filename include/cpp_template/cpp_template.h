@@ -22,6 +22,7 @@ class TemplateNode : public rclcpp::Node
 {
 private:
   // private members
+
 public:
   TemplateNode();
   ~TemplateNode() override;

@@ -20,7 +20,7 @@ find_package(rclpy REQUIRED)
 include_directories(include)
 
 # Create Cpp executable
-add_executable(cpp_template src/template.cpp)
+add_executable(cpp_template src/cpp_template.cpp)
 ament_target_dependencies(cpp_template rclcpp)
 
 # Install Cpp executable
@@ -30,5 +30,11 @@ install(TARGETS
 
 # Install Python modules
 ament_python_install_package(${PROJECT_NAME})
+
+# Install Python executables
+install(PROGRAMS
+  scripts/py_template.py
+  DESTINATION lib/${PROJECT_NAME}
+)
 
 ament_package()

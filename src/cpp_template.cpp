@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-#include "template/template.h"
+#include "cpp_template/cpp_template.h"
 
 TemplateNode::TemplateNode() : rclcpp::Node("cpp_template")
 {
