@@ -1,6 +1,9 @@
 name: ROS 2 Industrial CI
 on:
   pull_request:
+  push:
+    branches:
+      - main
 
 jobs:
   clang_format_check:
@@ -8,8 +11,6 @@ jobs:
     steps:
       - name: checkout
         uses: actions/checkout@v2
-        with:
-          ref: ${{ github.head_ref }}
       - name: run industrial_ci
         uses: 'ros-industrial/industrial_ci@master'
         env:
