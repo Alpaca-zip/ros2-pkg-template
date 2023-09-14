@@ -1,6 +1,9 @@
 name: ROS 2 Industrial CI
 on:
   pull_request:
+  push:
+    branches:
+      - main
 
 jobs:
   clang_format_check:
@@ -8,8 +11,6 @@ jobs:
     steps:
       - name: checkout
         uses: actions/checkout@v2
-        with:
-          ref: ${{ github.head_ref }}
       - name: run industrial_ci
         uses: 'ros-industrial/industrial_ci@master'
         env:
@@ -30,6 +31,7 @@ jobs:
           ROS_DISTRO: humble # Replace humble for your chosen distro.
           # UPSTREAM_WORKSPACE: dependencies.rosinstall
           # BEFORE_BUILD_TARGET_WORKSPACE: 'apt update -q && python3 -m pip install ****'
+          CLANG_TIDY_ARGS: '--extra-arg=-std=c++17'
           CLANG_TIDY: pedantic
 
   black_check:
